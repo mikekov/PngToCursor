@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<_name>Create Cursor</_name>
+	<id>org.inkscape.export.cursor</id>
+	<dependency type="executable" location="extensions">export_cursor.py</dependency>
+	<dependency type="executable" location="extensions">PngToIco.exe</dependency>
+	<param name="out_dir" type="string" _gui-text="Cursor output folder:">c:\temp</param>
+	<effect needs-live-preview="false">
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Export"/>
+		</effects-menu>
+	</effect>
+	<script>
+		<command reldir="extensions" interpreter="python">export_cursor.py</command>
+	</script>
+</inkscape-extension>

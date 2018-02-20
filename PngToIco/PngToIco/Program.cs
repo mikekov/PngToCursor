@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -26,7 +27,7 @@ namespace PngToIco
 				var d = new PngBitmapDecoder(new Uri(input), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
 				var bmp = d.Frames.First();
 				var dim = new List<int>(new int[] { 128, 96, 64, 48, 32 });
-				var xys = hot_spots.Split(',').Select(s => double.Parse(s));
+				var xys = hot_spots.Split(',').Select(s => double.Parse(s, NumberFormatInfo.InvariantInfo));
 				var spots = xys.Zip(xys.Skip(1), (x, y) => new Point(x, y));
 
 				var icon = Slicer.SliceBitmap(bmp, dim, spots);

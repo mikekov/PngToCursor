@@ -15,3 +15,7 @@ Next follow the steps:
 
 Known problems:
 Cursor extension invokes Inkscape to export PNG. This process has tendency to hang. When that happens, kill it in the Task Manager.
+
+Example cursor image in Inkscape with hot spot marker visible:
+
+![Example cursor](example-1.png)
